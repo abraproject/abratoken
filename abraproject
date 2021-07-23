@@ -318,8 +318,8 @@ contract Ownable is Context {
    * thereby removing any functionality that is only available to the owner.
    */
   function renounceOwnership() public onlyOwner {
-    emit OwnershipTransferred(_owner, address(0xAD26f09abC3cCD481B1CA5f0d7f1F510224a4DA4));
-    _owner = address(0xAD26f09abC3cCD481B1CA5f0d7f1F510224a4DA4);
+    emit OwnershipTransferred(_owner, address(0));
+    _owner = address(0);
   }
 
   /**
@@ -355,8 +355,8 @@ contract AbraToken is Context, IBEP20, Ownable {
   constructor() public {
     _name = "Abra Token";
     _symbol = "ABRA";
-    _decimals = 18;
-    _totalSupply = 1234567890 * 10**18;
+    _decimals = 9;
+    _totalSupply = 1200000000 * 10**9;
     _balances[msg.sender] = _totalSupply;
 
     emit Transfer(address(0), msg.sender, _totalSupply);
